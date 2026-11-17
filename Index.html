@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Generate Soal</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>PERSONAL FINANCE</title>
+  
+  <!-- Konfigurasi PWA / Fullscreen iOS -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Personal Finance">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/ramma32fajr/finance/refs/heads/main/favico.png">
+
+  <link rel="icon" href="https://raw.githubusercontent.com/ramma32fajr/finance/refs/heads/main/wallet.png" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+      overflow: hidden; /* Mencegah scroll ganda */
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
+      overflow: hidden;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <!-- Tempelkan link web app Google Apps Script di bagian src di bawah ini -->
-    <iframe src="https://script.google.com/macros/s/AKfycbwBiPuQULtgLR1uw-dg-QG1dcxoBDHZYZ3yeWEkzx6maUoh0YYU4KGu746X26NPIdO-XQ/exec"></iframe>
+  <div class="iframe-container">
+    <iframe
+      id="app"
+      src="https://script.google.com/macros/s/AKfycbxGvdS4yQE_KXUgZsa2vO4DnNDpFnwauouzP9L1p0uEZHtVL8jsLhjOlHJgs-1qm36AKA/exec"
+      scrolling="yes"
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allow="fullscreen; camera; microphone; display-capture; geolocation;">
+    </iframe>
+  </div>
 </body>
 </html>
